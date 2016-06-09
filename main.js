@@ -26,7 +26,10 @@ function turn(event){
   //console.log("empty: " ,empty);
   if(!gameOver && empty === ''){
   //console.log("Turn");
- 
+  if(cats == 8){
+  $('.winner').text("Cat's Game!")
+  gameOver =true;
+  }
   //console.log(event.target.id);
   var place = parseInt(event.target.id);
   //var child = event.target;
@@ -70,10 +73,6 @@ function turn(event){
   //console.log("os:", os);
 }
 
-if(cats == 9){
-  $('.winner').text("Cat's Game!")
-  gameOver =true;
-}
  cats++;
 }
 
