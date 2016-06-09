@@ -6,18 +6,30 @@ var gameOver = false;
 var cats = 0;
 var rand =0;
 var names = [];
+var winners = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 
 $(document).ready(init); 
 
 function init(){
-  //console.log("ready");
-  //console.log("player o's turn");
 
+ /* var n =3;
+  //Print divs here
+  //should append at the end
+  for(let i=0; i<n; i++){
+    var $trEl = $('<tr>');
+    $trEl.addClass(`row row${i} id = ${i}>`);
+    $('.board').append($trEl);
+    for(let j=0; j<n; j++ ){
+       var $tdEl = $('<td>');
+       $tdEl.addClass(`col col${j+(i*3)} id = ${j+(i*3)}>`);
+       $trEl.append($tdEl);
+    }
+  }
+*/
   //player clicked on a box
   $('.col').click(turn);
   $('.restart').click(restartGame);
   $('.startGame').click(startGame);
-
 
 }
 
@@ -25,11 +37,11 @@ function turn(event){
   var empty = $(event.target).text();
   //console.log("empty: " ,empty);
   if(!gameOver && empty === ''){
-  //console.log("Turn");
   if(cats == 8){
   $('.winner').text("Cat's Game!")
   gameOver =true;
   }
+  //console.log("Turn");
   //console.log(event.target.id);
   var place = parseInt(event.target.id);
   //var child = event.target;
@@ -68,8 +80,8 @@ function turn(event){
       gameOver = true;
     }
   }
-
- cats++;
+  cats++;
+  console.log(cats);
   //console.log("xs:" , xs);
   //console.log("os:", os);
 }
@@ -79,7 +91,6 @@ function turn(event){
 /* Ways to win (0,1,2) (3,4,5) (6,7,8) (0,3,6) (1,4,7) (2,5,8)*/
 function checkWin(places){
   //must have atleast 3 to win
-  var winners = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
   //console.log("winners: " , winners.length);
   //console.log(places);
   if(places.length < 3)
@@ -143,3 +154,17 @@ function startGame(){
   toggle = rand;
   }
 }
+
+/*winnersTemp = [];
+function findWinners(n){
+  
+  //horizontal wins
+  // [0..n] ,[n.. 2n-1], [2n...3n-1], [3n...4n-1] ...
+  for(var i=0; i<n; i++){
+
+  }
+  
+}*/
+
+
+
