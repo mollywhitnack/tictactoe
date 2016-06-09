@@ -2,6 +2,7 @@ var player = ['X', 'O'];
 var toggle=0;
 var xs =[];
 var os = [];
+var gameOver = false;
 
 $(document).ready(init); 
 
@@ -9,12 +10,20 @@ function init(){
   console.log("ready");
   console.log("player o's turn");
 
+ /* $('.col').click(function(){
+    if(!gameOver){
+      $('.col').click(turn);
+    }
+  });*/
+
   //player clicked on a box
   $('.col').click(turn);
   $('.restart').click(restartGame);
+
 }
 
 function turn(event){
+  if(!gameOver){
   console.log("Turn");
   console.log(event.target.id);
   var place = parseInt(event.target.id);
@@ -32,6 +41,7 @@ function turn(event){
       console.log("X is the WINNER");
       //$('.col').text('');
       $('.winner').text("X is the WINNER");
+      gameOver = true;
     }
   }
   else{
@@ -42,11 +52,13 @@ function turn(event){
       console.log("O is the WINNER");
       //$('.col').text('');
       $('.winner').text("O is the WINNER");
+      gameOver = true;
     }
   }
 
   console.log("xs:" , xs);
   console.log("os:", os);
+}
 }
 
 /* Ways to win (0,1,2) (3,4,5) (6,7,8) (0,3,6) (1,4,7) (2,5,8)*/
@@ -101,4 +113,5 @@ function restartGame(){
   places  = [];
   $('.col').text('');
   $('.winner').text('');
+  gameOver = false;
 }
