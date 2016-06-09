@@ -69,11 +69,11 @@ function turn(event){
     }
   }
 
+ cats++;
   //console.log("xs:" , xs);
   //console.log("os:", os);
 }
 
- cats++;
 }
 
 /* Ways to win (0,1,2) (3,4,5) (6,7,8) (0,3,6) (1,4,7) (2,5,8)*/
