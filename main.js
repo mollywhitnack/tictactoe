@@ -26,7 +26,7 @@ function turn(event){
   //console.log("empty: " ,empty);
   if(!gameOver && empty === ''){
   //console.log("Turn");
-  cats++;
+ 
   //console.log(event.target.id);
   var place = parseInt(event.target.id);
   //var child = event.target;
@@ -74,6 +74,7 @@ if(cats == 9){
   $('.winner').text("Cat's Game!")
   gameOver =true;
 }
+ cats++;
 }
 
 /* Ways to win (0,1,2) (3,4,5) (6,7,8) (0,3,6) (1,4,7) (2,5,8)*/
