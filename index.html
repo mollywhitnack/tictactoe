@@ -4,14 +4,38 @@
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/animate.css">
   <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </head>
 <body>
   <h1 class="title">Tic Tac Toe</h1> 
+  <div class="chooseFirst">
+    <input type="text" class="playerx" placeholder="Player X">
+    <input type="text" class="playero" placeholder="Player O">
+    <div class="startButton"><button class="startGame">Randomly Pick First Player</button></div>
+  </div>
+  <h3 class="player"></h3>
 
-  <h3 class="player">Player X start</h3>
-<div class="board active">
+  <table class ="board">
+   <tr class="row row0" id ="0">
+    <td class="col col0" id = '0'></td>
+    <td class="col col1" id = '1'></td>
+    <td class="col col2" id = '2'></td>
+  </tr>
+  <tr class="row row1" id ="1">
+    <td class="col col3" id = '3'></td>
+    <td class="col col4" id = '4'></td>
+    <td class="col col5" id = '5'></td>
+  </tr>
+  <tr class="row row2" id ="2">
+    <td class="col col6" id = '6'></td>
+    <td class="col col7" id = '7'></td>
+    <td class="col col8" id = '8'></td>
+  </tr>
+  </table>
+
+<!--<div class="board active">
   <div class="row row0" id ="0"> 
   <span class="col col0" id = '0'></span>
   <span class="col col1" id = '1'></span>
@@ -27,7 +51,7 @@
   <span class="col col7" id = '7'></span>
   <span class="col col8" id = '8'></span>
   </div>
-</div>
+</div>-->
   <div class="startOver"><button class="restart">Start Game Over</button></div>
 
   <div class="winner"></div>
