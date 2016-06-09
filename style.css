@@ -13,8 +13,14 @@ html, body {
 }
 .boardSize2{
   text-align: center;
-  margin-bottom: 10px;
+  height:40px;
 }
+
+.boardSize{
+  width: 75px;
+}
+
+
 .chooseFirst{
   text-align: center;
   font-size: 25px;
@@ -52,6 +58,13 @@ button{
   background-color: #538cc6;
 }
 
+button.submit{
+  padding:5px;
+  font-size: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
 .restart{
   margin-top: 10px;
 }
@@ -66,7 +79,6 @@ button{
 
 .board{
   margin: 0 auto;
-  background-color: #f2f2f2;
   padding:20px;
 
 }
@@ -77,58 +89,4 @@ button{
   font-size: 25px;
 }
 
-/*.col0{
-  border-right: 3px solid #000;
-  border-bottom: 3px solid #000;
-}
-
-.col1{
-  border-left: 3px solid #000;
-  border-right: 3px solid #000;
-  border-bottom: 3px solid #000;
-  
-}
-
-.col2{
-  border-left: 3px solid #000;
-  border-bottom: 3px solid #000;
-  
-}
-
-.col3{
-  border-top: 3px solid #000;
-  border-right: 3px solid #000;
-  border-bottom: 3px solid #000;
-}
-
-.col4{
-  border-top: 3px solid #000;
-  border-right: 3px solid #000;
-  border-left: 3px solid #000;
-  border-bottom: 3px solid #000;
-}
-
-.col5{
-  border-top: 3px solid #000;
-  border-left: 3px solid #000;
-  border-bottom: 3px solid #000;
-}
-
-
-.col6{
-  border-top: 3px solid #000;
-  border-right: 3px solid #000;
-}
-
-
-.col7{
-  border-top: 3px solid #000;
-  border-right: 3px solid #000;
-  border-left: 3px solid #000;
-}
-
-.col8{
-  border-top: 3px solid #000;
-  border-left: 3px solid #000;
-}*/
 
