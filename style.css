@@ -11,7 +11,10 @@ html, body {
   margin-top:-10px;
   padding-bottom: 20px;
 }
-
+.boardSize2{
+  text-align: center;
+  margin-bottom: 10px;
+}
 .chooseFirst{
   text-align: center;
   font-size: 25px;
