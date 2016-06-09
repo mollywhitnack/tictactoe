@@ -17,17 +17,17 @@ function init(){
 function turn(event){
   console.log("Turn");
   console.log(event.target.id);
-  var col = parseInt(event.target.id);
+  var place = parseInt(event.target.id);
   //var child = event.target;
   var row =  parseInt($(event.target).parent().attr('id'));
   console.log("row:" , row);
-  console.log("col: " , col);
+  console.log("place: " , place);
   //$(event.target).css()
   $(event.target).text(player[toggle]);
   if(toggle ==0){
     toggle =1;
     $('.player').text("Player O's turn");
-    xs.push([row,col]);
+    xs.push(place);
     if(checkWin(xs)){
       console.log("X is the WINNER");
       //$('.col').text('');
@@ -37,7 +37,7 @@ function turn(event){
   else{
     toggle =0;
     $('.player').text("Player X's turn");
-    os.push([row,col]);
+    os.push(place);
     if(checkWin(os)){
       console.log("O is the WINNER");
       //$('.col').text('');
@@ -62,25 +62,36 @@ function checkWin(places){
   for(let i =0; i<places.length; i++){
     for(let j = 0; j<winners.length; j++){
       //if the places array contains any of the possible winning combos
-      if(contains(places, winners[j])){
+      if(contains(winners[j], places)){
         console.log("WIN");
         return true;
-      }
-      else{
-        return false;
       }
     }
   }
 }
 
 function contains(isThis, insideThis){
-  for(let i =0; i<isThis.length; i++){
-    if($.inArray(isThis[i], insideThis) == -1)
-      return false;
-    else
-      return true;
+  console.log("check if ", isThis, " is in " , insideThis);
+    var boolWin = isThis.every(function (val) { 
+      console.log("outer arr: " , insideThis.indexOf(val));
+      return insideThis.indexOf(val) >= 0; 
+    });
+    return boolWin;
   }
-}
+
+
+  /*for(let i =0; i<isThis.length; i++){
+    console.log("check: ", isThis[i]);
+    if($.inArray(isThis[i], insideThis) == -1){
+      return false;
+      console.log("NOT in it");
+    }
+    else{
+      return true;
+      console.log("Is in it");
+    }
+  }*/
+
 
 function restartGame(){
   console.log("Restart Game");
