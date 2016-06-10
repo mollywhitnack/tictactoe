@@ -6,7 +6,6 @@ var gameOver = false;
 var cats = 0;
 var rand =0;
 var names = [];
-//var winners = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 var winningCombos =[];
 var n = 3;
 
@@ -15,10 +14,6 @@ $(document).ready(init);
 function init(){
 
   $('.submit').click(setBoard);
-  //player clicked on a box
- /* $('.col').click(turn);
-  $('.restart').click(restartGame);
-  $('.startGame').click(startGame);*/
   
 }
 
@@ -59,15 +54,11 @@ function turn(event){
     $('.winner').text("Cat's Game!")
     gameOver =true;
   }
-  //console.log("Turn");
-  //console.log("event: " , event.target.id);
+
   var place = parseInt(event.target.id);
   console.log("place: " , place);
   //var child = event.target;
   var row =  parseInt($(event.target).parent().attr('id'));
-  //console.log("row:" , row);
-  //console.log("place: " , place);
-  //$(event.target).css()
   $(event.target).text(player[toggle]);
   if(toggle ==0){
     toggle =1;
@@ -76,8 +67,6 @@ function turn(event){
     $('.player').css('padding-bottom', '14px');
     xs.push(place);
     if(checkWin(xs)){
-      //console.log("X is the WINNER");
-      //console.log('Name: ' , names[0]);
       if(names[0] != undefined)
         $('.winner').text( `Player X: ${names[0]} is the WINNER!`);
       else
@@ -90,8 +79,6 @@ function turn(event){
     $('.player').text("Player X's turn");
     os.push(place);
     if(checkWin(os)){
-      //console.log("O is the WINNER");
-      //console.log('Name: ' ,names[1]);
       if(names[1]!= undefined)
         $('.winner').text( `Player O: ${names[1]} is the WINNER!`);
       else
@@ -101,22 +88,17 @@ function turn(event){
   }
   cats++;
   console.log("CATS: " ,cats);
-  //console.log("xs:" , xs);
-  //console.log("os:", os);
+
 }
 
 }
 
 /* Ways to win (0,1,2) (3,4,5) (6,7,8) (0,3,6) (1,4,7) (2,5,8)*/
 function checkWin(places){
-  //must have atleast 3 to win
-  //console.log("winners: " , winners.length);
-  //console.log(places);
   if(places.length < n)
     return false;
   places.sort()
   console.log("sorted: " , places);
-  //console.log("search through " , winningCombos.length(), "  winningCombos");
   for(let i =0; i<places.length; i++){
     var b = parseInt(n)//+n+2);
     var c = (b*2)+2;
