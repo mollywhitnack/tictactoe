@@ -118,9 +118,13 @@ function checkWin(places){
   console.log("sorted: " , places);
   //console.log("search through " , winningCombos.length(), "  winningCombos");
   for(let i =0; i<places.length; i++){
-    for(let j = 0; j<(n+n+2); j++){
+    var b = parseInt(n)//+n+2);
+    var c = (b*2)+2;
+    console.log("c: " , c);
+    console.log(winningCombos);
+    for(let j = 0; j<c; j++){
       //if the places array contains any of the possible winning combos
-      console.log("undefined when wining combos at " , j);
+      console.log("wining combos at " , j , " , " , winningCombos[j]);
       if(contains(winningCombos[j], places)){
         console.log("WIN");
         return true;
